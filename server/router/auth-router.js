@@ -13,10 +13,11 @@ const { signupSchema, loginSchema } = require("../validators/auth-validator");
 const validate = require("../middlewares/validate-middleware");
 const authMiddleware = require("../middlewares/auth-middleware");
 
-router.route("/").get(authControllers.home);
+router.route("/").get("");
 router
   .route("/register")
   .post(validate(signupSchema), authControllers.register);
+  // .post("<h1>hello<h1>")
 
 router.route("/login").post(validate(loginSchema), authControllers.login);
 
