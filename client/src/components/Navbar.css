@@ -9,47 +9,50 @@ ul {
   display: flex;
   gap: 3.2rem;
 }
-
 /* Original styles for larger screens */
 
 /* ... Your existing styles ... */
 
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 768px) {
-  .nav-links {
+  .container {
+    padding: 10px; /* Adjust as needed */
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
     background-color: #333;
-    text-align: center;
     display: none;
   }
 
-  .nav-links.show {
-    display: block;
+  .nav-list.show {
+    display: flex;
   }
 
-  .nav-links ul {
-    padding: 20px;
-  }
-
-  .nav-links li {
+  .nav-list li {
     margin: 10px 0;
   }
 
-  .nav-toggle {
-    display: block;
-    cursor: pointer;
-    order: 1;
-  }
-
-  .nav-icon {
-    cursor: pointer;
+  .menu-toggle {
     display: none;
   }
 
-  .nav-icon span {
+  .menu-icon {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .menu-icon span {
     display: block;
     height: 2px;
     width: 25px;
@@ -57,15 +60,15 @@ ul {
     margin: 6px auto;
   }
 
-  input:checked+.nav-icon span:nth-child(1) {
+  input:checked + .menu-icon span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
 
-  input:checked+.nav-icon span:nth-child(2) {
+  input:checked + .menu-icon span:nth-child(2) {
     opacity: 0;
   }
 
-  input:checked+.nav-icon span:nth-child(3) {
+  input:checked + .menu-icon span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
 }
