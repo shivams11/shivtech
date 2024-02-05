@@ -9,3 +9,63 @@ ul {
   display: flex;
   gap: 3.2rem;
 }
+
+/* Original styles for larger screens */
+
+/* ... Your existing styles ... */
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: block;
+  }
+
+  .nav-links ul {
+    padding: 20px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-toggle {
+    display: block;
+    cursor: pointer;
+    order: 1;
+  }
+
+  .nav-icon {
+    cursor: pointer;
+    display: none;
+  }
+
+  .nav-icon span {
+    display: block;
+    height: 2px;
+    width: 25px;
+    background-color: #fff;
+    margin: 6px auto;
+  }
+
+  input:checked+.nav-icon span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  input:checked+.nav-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  input:checked+.nav-icon span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
