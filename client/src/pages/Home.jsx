@@ -28,7 +28,7 @@ export const Home = () => {
             {/* hero images  */}
             <div className="hero-image">
               <img
-                src="/images/shivam.png"
+                src='/images/design.png'
                 alt="coding together"
                 width="400"
                 height="500"
